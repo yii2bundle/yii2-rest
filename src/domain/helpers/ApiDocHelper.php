@@ -77,28 +77,28 @@ baseUri: ' . ApiDocEnum::EXAMPLE_DOMAIN . '/v' . $version . '
 mediaType: [ application/json, application/xml ]
 
 securitySchemes:
-  Auth: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/securitySchemes/base.raml
+  Auth: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/securitySchemes/base.raml
 #securedBy: [ Auth ]
 
 traits:
-  paged:   !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/paged.raml
-  search:   !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/search.raml
-  lang:    !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/lang.raml
-  fields:  !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/fields.raml
-  expand:  !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/expand.raml
-  code200: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/200.raml
-  code201: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/201.raml
-  code204: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/204.raml
-  code304: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/304.raml
-  code400: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/400.raml
-  code401: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/401.raml
-  code403: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/403.raml
-  code404: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/404.raml
-  code405: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/405.raml
-  code415: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/415.raml
-  code422: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/422.raml
-  code429: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/429.raml
-  code500: !include ../../../vendor/yii2lab/yii2-rest/src/domain/docs/traits/codes/500.raml
+  paged:   !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/paged.raml
+  search:   !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/search.raml
+  lang:    !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/lang.raml
+  fields:  !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/fields.raml
+  expand:  !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/expand.raml
+  code200: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/200.raml
+  code201: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/201.raml
+  code204: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/204.raml
+  code304: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/304.raml
+  code400: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/400.raml
+  code401: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/401.raml
+  code403: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/403.raml
+  code404: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/404.raml
+  code405: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/405.raml
+  code415: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/415.raml
+  code422: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/422.raml
+  code429: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/429.raml
+  code500: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/500.raml
 
 ' . $ramlsString;
 	}
