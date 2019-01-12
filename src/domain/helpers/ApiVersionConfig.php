@@ -3,6 +3,7 @@
 namespace yii2lab\rest\domain\helpers;
 
 use yii\helpers\ArrayHelper;
+use yii2lab\app\domain\helpers\EnvService;
 
 class ApiVersionConfig {
 	
@@ -22,7 +23,7 @@ class ApiVersionConfig {
 	}
 
     public static function defaultApiVersionNumber($default = null) {
-        return env('api.defaultVersion', $default);
+        return EnvService::get('api.defaultVersion', $default);
     }
 
     public static function defaultApiVersionSting($default = null) {
