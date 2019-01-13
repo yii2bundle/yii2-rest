@@ -1,5 +1,0 @@
-(function($){
-
-    $.domain.rest = {};
-
-})(jQuery);

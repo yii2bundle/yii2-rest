@@ -1,3 +1,0 @@
-(function($){
-    $.domain.storage = {};
-})(jQuery);
