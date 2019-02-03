@@ -4,8 +4,8 @@ namespace yii2lab\rest\domain\rest;
 
 use Yii;
 use yii\data\Pagination;
-use yii2lab\extension\develop\helpers\Debug;
-use yii2lab\extension\common\helpers\TypeHelper;
+use yii2rails\extension\develop\helpers\Debug;
+use yii2rails\extension\common\helpers\TypeHelper;
 use yii\rest\Serializer as YiiSerializer;
 
 class Serializer extends YiiSerializer {

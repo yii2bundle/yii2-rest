@@ -3,8 +3,8 @@
 namespace yii2lab\rest\domain\rest;
 
 use yii\rest\Controller as YiiController;
-use yii2lab\domain\services\base\BaseService;
-use yii2lab\extension\web\helpers\ControllerHelper;
+use yii2rails\domain\services\base\BaseService;
+use yii2rails\extension\web\helpers\ControllerHelper;
 
 /**
  * Class Controller

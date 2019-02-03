@@ -3,7 +3,7 @@
 namespace yii2lab\rest\domain\rest;
 
 use Yii;
-use yii2lab\extension\web\traits\ActionEventTrait;
+use yii2rails\extension\web\traits\ActionEventTrait;
 
 class ActiveControllerWithQuery extends Controller {
 	

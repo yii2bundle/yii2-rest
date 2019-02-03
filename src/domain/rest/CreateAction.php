@@ -3,7 +3,7 @@
 namespace yii2lab\rest\domain\rest;
 
 use Yii;
-use yii2lab\extension\web\enums\ActionEventEnum;
+use yii2rails\extension\web\enums\ActionEventEnum;
 
 class CreateAction extends BaseAction {
 

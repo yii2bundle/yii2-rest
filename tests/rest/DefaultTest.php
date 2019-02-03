@@ -3,7 +3,7 @@
 namespace tests\rest;
 
 use yii2lab\test\base\_application\common\enums\app\ApiVersionEnum;
-use yii2lab\app\domain\helpers\EnvService;
+use yii2rails\app\domain\helpers\EnvService;
 use yii2lab\test\Test\Rest;
 
 class DefaultTest extends Rest {

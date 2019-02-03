@@ -4,8 +4,8 @@ namespace yii2lab\rest\domain\rest;
 
 use Yii;
 use yii\base\Action;
-use yii2lab\extension\web\helpers\ControllerHelper;
-use yii2lab\extension\web\traits\ActionEventTrait;
+use yii2rails\extension\web\helpers\ControllerHelper;
+use yii2rails\extension\web\traits\ActionEventTrait;
 
 /**
  * Class BaseAction

@@ -7,8 +7,8 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Url;
 use yii\web\ServerErrorHttpException;
-use yii2lab\app\domain\helpers\EnvService;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\app\domain\helpers\EnvService;
+use yii2rails\extension\yii\helpers\FileHelper;
 
 class MiscHelper {
 	

@@ -3,8 +3,8 @@
 namespace yii2lab\rest\domain\rest;
 
 use yii\data\BaseDataProvider;
-use yii2lab\extension\web\enums\ActionEventEnum;
-use yii2lab\extension\web\helpers\ClientHelper;
+use yii2rails\extension\web\enums\ActionEventEnum;
+use yii2rails\extension\web\helpers\ClientHelper;
 
 class IndexActionWithQuery extends BaseAction {
 

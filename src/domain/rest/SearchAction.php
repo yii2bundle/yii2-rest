@@ -4,11 +4,11 @@ namespace yii2lab\rest\domain\rest;
 
 use Yii;
 use yii\web\BadRequestHttpException;
-use yii2lab\domain\exceptions\UnprocessableEntityHttpException;
-use yii2lab\domain\helpers\ErrorCollection;
-use yii2lab\domain\services\base\BaseActiveService;
-use yii2lab\extension\activeRecord\helpers\SearchHelper;
-use yii2lab\extension\web\helpers\ClientHelper;
+use yii2rails\domain\exceptions\UnprocessableEntityHttpException;
+use yii2rails\domain\helpers\ErrorCollection;
+use yii2rails\domain\services\base\BaseActiveService;
+use yii2rails\extension\activeRecord\helpers\SearchHelper;
+use yii2rails\extension\web\helpers\ClientHelper;
 
 /**
  * @property BaseActiveService $service

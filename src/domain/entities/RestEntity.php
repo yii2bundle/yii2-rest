@@ -3,8 +3,8 @@
 namespace yii2lab\rest\domain\entities;
 
 use yii\web\ServerErrorHttpException;
-use yii2lab\domain\BaseEntityWithId;
-use yii2lab\extension\yii\helpers\ArrayHelper;
+use yii2rails\domain\BaseEntityWithId;
+use yii2rails\extension\yii\helpers\ArrayHelper;
 
 /**
  * Class RestEntity

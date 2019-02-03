@@ -2,13 +2,13 @@
 
 namespace yii2lab\rest\domain\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\web\enums\HttpMethodEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\web\enums\HttpMethodEnum;
 use yii2mod\helpers\ArrayHelper;
 
 /**
  * Class RequestEntity
- * @package yii2lab\domain\entities
+ * @package yii2rails\domain\entities
  *
  * @property $method string
  * @property $uri string

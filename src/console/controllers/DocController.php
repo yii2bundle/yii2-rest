@@ -2,10 +2,10 @@
 
 namespace yii2lab\rest\console\controllers;
 
-use yii2lab\extension\console\base\Controller;
-use yii2lab\extension\console\helpers\input\Select;
+use yii2rails\extension\console\base\Controller;
+use yii2rails\extension\console\helpers\input\Select;
 use yii2lab\rest\domain\helpers\ApiDocHelper;
-use yii2lab\extension\console\helpers\Output;
+use yii2rails\extension\console\helpers\Output;
 use yii2lab\rest\domain\helpers\MiscHelper;
 
 /**

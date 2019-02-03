@@ -3,7 +3,7 @@
 namespace yii2lab\rest\domain\helpers;
 
 use yii\helpers\ArrayHelper;
-use yii2lab\app\domain\helpers\EnvService;
+use yii2rails\app\domain\helpers\EnvService;
 
 class ApiVersionConfig {
 	

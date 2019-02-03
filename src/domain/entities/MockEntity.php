@@ -2,12 +2,12 @@
 
 namespace yii2lab\rest\domain\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\extension\web\enums\HttpMethodEnum;
+use yii2rails\domain\BaseEntity;
+use yii2rails\extension\web\enums\HttpMethodEnum;
 
 /**
  * Class RequestEntity
- * @package yii2lab\domain\entities
+ * @package yii2rails\domain\entities
  *
  * @property RequestEntity $request
  * @property ResponseEntity $response

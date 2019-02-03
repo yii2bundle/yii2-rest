@@ -2,7 +2,7 @@
 
 namespace yii2lab\rest\domain\rest;
 
-use yii2lab\extension\web\enums\ActionEventEnum;
+use yii2rails\extension\web\enums\ActionEventEnum;
 
 class DeleteAction extends BaseAction {
 
