@@ -3,7 +3,6 @@
 namespace yii2lab\rest\domain\rest;
 
 use Yii;
-use yii2rails\extension\web\enums\ActionEventEnum;
 
 class UniAction extends BaseAction {
 
