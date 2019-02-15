@@ -1,5 +1,6 @@
 queryParameters:
-  search-text:
-    type: string
-    description: Поиск по тексту (регистронезависимый)
+  search:
+    type: array
+    description: Поиск по указанным полям
     required: false
+    example: search[name]=john
