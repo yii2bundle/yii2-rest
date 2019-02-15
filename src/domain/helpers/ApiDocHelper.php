@@ -84,6 +84,7 @@ traits:
   paged:   !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/paged.raml
   search:   !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/search.raml
   lang:    !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/lang.raml
+  timezone: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/timezone.raml
   fields:  !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/fields.raml
   expand:  !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/expand.raml
   code200: !include ../../../vendor/yii2bundle/yii2-rest/src/domain/docs/traits/codes/200.raml
