@@ -23,9 +23,7 @@ class Serializer extends YiiSerializer {
 	}
 	
 	protected function serializeModels(array $models) {
-		foreach($models as &$item) {
-			$item = TypeHelper::serialize($item, $this->format);
-		}
+        $models = TypeHelper::serializeModels($models, $this->format);
 		return $models;
 	}
 
