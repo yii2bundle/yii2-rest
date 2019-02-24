@@ -44,7 +44,7 @@ class RestHelper {
      *
      * @return ResponseEntity
      */
-    public static function sendRequest(RequestEntity $requestEntity) {
+    public static function sendRequest(RequestEntity $requestEntity) : ResponseEntity {
 	    /** @var Request $request */
 	    $request = self::buildRequestClass($requestEntity);
 	    $begin = microtime(true);
