@@ -31,7 +31,18 @@ class BaseAction extends Action {
 		parent::init();
 		$this->service = ControllerHelper::forgeService($this->getService());
 	}
-	
+
+    protected function runServiceMethod1() {
+        $args = func_get_args();
+        $response = ControllerHelper::runServiceMethod($this->service, $this->serviceMethod, $args, $this->serviceMethodParams);
+
+        Yii::$app->response->setStatusCode($this->successStatusCode);
+        /*if($this->successStatusCode != 200) {
+            $response = null;
+        }*/
+        return $response;
+    }
+
 	protected function runServiceMethod() {
 		$args = func_get_args();
 		$response = ControllerHelper::runServiceMethod($this->service, $this->serviceMethod, $args, $this->serviceMethodParams);
