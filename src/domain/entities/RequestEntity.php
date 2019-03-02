@@ -14,6 +14,7 @@ use yii2mod\helpers\ArrayHelper;
  * @property $uri string
  * @property $data array
  * @property $headers array
+ * @property $files array
  * @property $options array
  * @property $cookies array
  * @property $format string
@@ -28,6 +29,7 @@ class RequestEntity extends BaseEntity {
 	protected $uri;
 	protected $data = [];
 	protected $headers = [];
+    protected $files = [];
 	protected $options = [];
 	protected $cookies = [];
 	protected $format = null;

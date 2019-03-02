@@ -89,6 +89,11 @@ class RestHelper {
 	    if($requestEntity->format !== null) {
 		    $request->setFormat($requestEntity->format);
 	    }
+        if($requestEntity->files) {
+	        foreach ($requestEntity->files as $key => $filePath) {
+                $request->addFile($key, $filePath);
+            }
+        }
         return $request;
     }
 	
