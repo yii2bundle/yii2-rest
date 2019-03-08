@@ -29,7 +29,7 @@ class SearchAction extends IndexAction {
 		} catch(BadRequestHttpException $e) {
 			$error = new ErrorCollection;
 			$error->add('title', $e->getMessage());
-			throw new UnprocessableEntityHttpException($error);
+			throw new UnprocessableEntityHttpException($error, 0, $e);
 		}
 	}
 
