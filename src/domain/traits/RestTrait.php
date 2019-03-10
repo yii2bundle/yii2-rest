@@ -22,7 +22,7 @@ trait RestTrait {
 	public $options = [];
 	public $format;
 	
-	public function get($uri = null, array $data = [], array $headers = [], array $options = []) {
+	public function get($uri = null, array $data = [], array $headers = [], array $options = []) : ResponseEntity {
 		$requestEntity = new RequestEntity;
 		$requestEntity->method = HttpMethodEnum::GET;
 		$requestEntity->uri = $uri;
@@ -32,7 +32,7 @@ trait RestTrait {
 		return $this->sendRequest($requestEntity);
 	}
 	
-	public function post($uri = null, array $data = [], array $headers = [], array $options = []) {
+	public function post($uri = null, array $data = [], array $headers = [], array $options = []) : ResponseEntity {
 		$requestEntity = new RequestEntity;
 		$requestEntity->method = HttpMethodEnum::POST;
 		$requestEntity->uri = $uri;
@@ -42,7 +42,7 @@ trait RestTrait {
 		return $this->sendRequest($requestEntity);
 	}
 	
-	public function put($uri = null, array $data = [], array $headers = [], array $options = []) {
+	public function put($uri = null, array $data = [], array $headers = [], array $options = []) : ResponseEntity {
 		$requestEntity = new RequestEntity;
 		$requestEntity->method = HttpMethodEnum::PUT;
 		$requestEntity->uri = $uri;
@@ -52,7 +52,7 @@ trait RestTrait {
 		return $this->sendRequest($requestEntity);
 	}
 	
-	public function del($uri = null, array $data = [], array $headers = [], array $options = []) {
+	public function del($uri = null, array $data = [], array $headers = [], array $options = []) : ResponseEntity {
 		$requestEntity = new RequestEntity;
 		$requestEntity->method = HttpMethodEnum::DELETE;
 		$requestEntity->uri = $uri;
@@ -62,7 +62,7 @@ trait RestTrait {
 		return $this->sendRequest($requestEntity);
 	}
 	
-	protected function sendRequest(RequestEntity $requestEntity) {
+	protected function sendRequest(RequestEntity $requestEntity) : ResponseEntity {
 		$requestEntity = $this->normalizeRequestEntity($requestEntity);
 		$responseEntity = RestHelper::sendRequest($requestEntity);
 		$this->handleStatusCode($responseEntity);
@@ -88,22 +88,32 @@ trait RestTrait {
 	}
 	
 	protected function showServerException(ResponseEntity $responseEntity) {
-		throw new ServerErrorHttpException();
+        $this->forgePreviousExceptionFromBody($responseEntity->data);
+		//throw new ServerErrorHttpException();
 	}
-	
+
 	protected function showUserException(ResponseEntity $responseEntity) {
 		$statusCode = $responseEntity->status_code;
 		if($statusCode == 401) {
-			throw new UnauthorizedHttpException();
+            $this->forgePreviousExceptionFromBody($responseEntity->data);
+			//throw new UnauthorizedHttpException();
 		} elseif($statusCode == 403) {
-			throw new ForbiddenHttpException();
+			//throw new ForbiddenHttpException();
+            $this->forgePreviousExceptionFromBody($responseEntity->data);
 		} elseif($statusCode == 422) {
 			throw new UnprocessableEntityHttpException();
 		} elseif($statusCode == 404) {
-			throw new NotFoundHttpException(get_called_class());
+		    $this->forgePreviousExceptionFromBody($responseEntity->data);
 		}
 	}
-	
+
+	protected function forgePreviousExceptionFromBody(array $body) {
+	    $className = $body['type'];
+        $message = $body['message'];
+	    $exceptionInstance = new $className($message);
+	    throw $exceptionInstance;
+    }
+
 	protected function normalizeRequestEntity(RequestEntity $requestEntity) {
 		$this->normalizeRequestEntityUrl($requestEntity);
 		if(!empty($this->headers)) {
@@ -129,7 +139,6 @@ trait RestTrait {
 		}
 		$resultUrl = ltrim($resultUrl, SL);
 		$requestEntity->uri = $resultUrl;
-		return $requestEntity;
 	}
 	
 	public function forgeEntity($data, $class = null) {
