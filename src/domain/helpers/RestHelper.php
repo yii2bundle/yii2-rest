@@ -55,7 +55,7 @@ class RestHelper {
         }
 	    $end = microtime(true);
 	    $duration = $end - $begin;
-        return self::buildResponseEntity($response, $duration);
+        return self::buildResponseEntity($response, $duration, $requestEntity);
     }
 
     private static function runRequest(array $data) {
@@ -103,7 +103,7 @@ class RestHelper {
 	 *
 	 * @return ResponseEntity
 	 */
-    private static function buildResponseEntity(Response $response, $duration) {
+    private static function buildResponseEntity(Response $response, $duration, RequestEntity $requestEntity) {
         $headers = [];
         foreach($response->headers as $k => $v) {
         	$headers[strtolower($k)] = $v[0];
@@ -120,6 +120,7 @@ class RestHelper {
         $responseEntity->cookies = $response->cookies;
         $responseEntity->status_code = $response->statusCode;
 	    $responseEntity->duration = $duration;
+        $responseEntity->request = $requestEntity;
         return $responseEntity;
     }
 

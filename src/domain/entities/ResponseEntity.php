@@ -16,6 +16,8 @@ use yii2rails\domain\BaseEntity;
  * @property string $format
  * @property boolean $is_ok
  * @property integer $duration
+ *
+ * @property RequestEntity $request
  */
 class ResponseEntity extends BaseEntity {
 
@@ -27,6 +29,8 @@ class ResponseEntity extends BaseEntity {
     protected $format;
 	protected $duration;
 
+    protected $request;
+
     public function getIsOk() {
         return strncmp('20', $this->status_code, 2) === 0;
     }
@@ -34,6 +38,7 @@ class ResponseEntity extends BaseEntity {
     public function fieldType() {
         return [
             'status_code' => 'integer',
+            'request' => RequestEntity::class,
         ];
     }
 }
