@@ -5,6 +5,7 @@ namespace yii2lab\rest\domain\rest;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii2rails\extension\web\enums\ActionEventEnum;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 
 class CreateAction extends BaseAction {
 
@@ -17,7 +18,7 @@ class CreateAction extends BaseAction {
 		$response = $this->runServiceMethod1($body);
 		$response = $this->callActionTrigger(ActionEventEnum::AFTER_WRITE, $response);
 		$id = ArrayHelper::getValue($response, 'id');
-        Yii::$app->response->headers->add('X-Entity-Id', $id);
+        Yii::$app->response->headers->add(HttpHeaderEnum::X_ENTITY_ID, $id);
         if($this->successStatusCode != 200) {
             $response = null;
         }
