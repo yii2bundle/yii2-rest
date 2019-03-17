@@ -8,6 +8,9 @@ use yii2rails\extension\web\traits\ActionEventTrait;
 class ActiveControllerWithQuery extends Controller {
 	
 	use ActionEventTrait;
+
+    public $formClass = null;
+    public $titleName = null;
 	
 	public function actions() {
 		return [

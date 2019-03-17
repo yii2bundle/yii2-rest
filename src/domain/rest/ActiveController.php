@@ -5,7 +5,10 @@ namespace yii2lab\rest\domain\rest;
 use Yii;
 
 class ActiveController extends Controller {
-	
+
+    public $formClass = null;
+    public $titleName = null;
+
 	public function actions() {
 		return [
 			'index' => [
