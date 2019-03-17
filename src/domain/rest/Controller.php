@@ -21,6 +21,15 @@ class Controller extends YiiController {
 		return [];
 	}
 
+    public function actions()
+    {
+        $actions = parent::actions();
+        $actions['options'] = [
+            'class' => 'yii\rest\OptionsAction',
+        ];
+        return $actions;
+    }
+
 	public function init() {
 		parent::init();
 		$this->initService();
