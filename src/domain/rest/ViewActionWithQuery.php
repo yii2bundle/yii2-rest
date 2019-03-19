@@ -15,7 +15,7 @@ class ViewActionWithQuery extends BaseAction {
 		$this->callActionTrigger(ActionEventEnum::BEFORE_READ);
 		$queryParams = Yii::$app->request->get();
 		unset($queryParams['id']);
-		$query = ClientHelper::getQueryFromRequest($queryParam, $this->query);
+		$query = ClientHelper::getQueryFromRequest($queryParams, $this->query);
 		$response = $this->runServiceMethod($id, $query);
 		$response = $this->callActionTrigger(ActionEventEnum::AFTER_READ, $response);
 		return $response;
