@@ -9,12 +9,13 @@ use yii2rails\extension\web\helpers\ClientHelper;
 class ViewActionWithQuery extends BaseAction {
 
 	public $serviceMethod = 'oneById';
+	public $query = null;
 	
 	public function run($id) {
 		$this->callActionTrigger(ActionEventEnum::BEFORE_READ);
 		$queryParams = Yii::$app->request->get();
 		unset($queryParams['id']);
-		$query = ClientHelper::getQueryFromRequest($queryParams);
+		$query = ClientHelper::getQueryFromRequest($queryParam, $this->query);
 		$response = $this->runServiceMethod($id, $query);
 		$response = $this->callActionTrigger(ActionEventEnum::AFTER_READ, $response);
 		return $response;
