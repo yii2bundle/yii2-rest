@@ -3,7 +3,11 @@
 namespace yii2lab\rest\domain\rest;
 
 use Yii;
+use yii\base\Arrayable;
+use yii\data\BaseDataProvider;
+use yii\data\DataProviderInterface;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 use yii2rails\extension\develop\helpers\Debug;
 use yii2rails\extension\common\helpers\TypeHelper;
 use yii\rest\Serializer as YiiSerializer;
@@ -38,7 +42,18 @@ class Serializer extends YiiSerializer {
 	
 	public function serialize($data) {
 		$this->addRuntimeHeader();
-		return parent::serialize($data);
+        $serializedData = parent::serialize($data);
+        list($fields, $expand) = $this->getRequestedFields();
+        if($fields) {
+            if ($data instanceof Arrayable) {
+                $serializedData = ArrayHelper::filter($serializedData, $fields);
+            } elseif ($data instanceof DataProviderInterface) {
+                foreach ($serializedData as &$item) {
+                    $item = ArrayHelper::filter($item, $fields);
+                }
+            }
+        }
+        return $serializedData;
 	}
 	
 	protected function addPaginationHeaders($pagination)
