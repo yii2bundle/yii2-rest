@@ -45,6 +45,9 @@ class Serializer extends YiiSerializer {
         $serializedData = parent::serialize($data);
         list($fields, $expand) = $this->getRequestedFields();
         if($fields) {
+            $fields = ArrayHelper::merge($fields, $expand);
+            $fields = array_unique($fields);
+            $fields = array_values($fields);
             if ($data instanceof Arrayable) {
                 $serializedData = ArrayHelper::filter($serializedData, $fields);
             } elseif ($data instanceof DataProviderInterface) {
