@@ -11,6 +11,7 @@ use yii\helpers\ArrayHelper;
 use yii2rails\extension\develop\helpers\Debug;
 use yii2rails\extension\common\helpers\TypeHelper;
 use yii\rest\Serializer as YiiSerializer;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 
 class Serializer extends YiiSerializer {
 	
@@ -37,7 +38,7 @@ class Serializer extends YiiSerializer {
 		}
 		$runtime = Debug::getRuntime();
 		$headers = $this->response->getHeaders();
-		$headers->set('X-Runtime', $runtime . ' s');
+		$headers->set(HttpHeaderEnum::X_RUNTIME, $runtime . ' s');
 	}
 	
 	public function serialize($data) {
