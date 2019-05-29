@@ -106,7 +106,7 @@ class RestHelper {
     private static function buildResponseEntity(Response $response, $duration, RequestEntity $requestEntity) {
         $headers = [];
         foreach($response->headers as $k => $v) {
-        	$headers[strtolower($k)] = $v[0];
+        	$headers[$k] = $v[0];
         }
 	    $responseEntity = new ResponseEntity;
         if(!empty($response->format)) {

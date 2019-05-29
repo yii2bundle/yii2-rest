@@ -41,4 +41,10 @@ class ResponseEntity extends BaseEntity {
             'request' => RequestEntity::class,
         ];
     }
+
+    public function getHeader($key) {
+        $key = mb_strtolower($key);
+        return $this->headers[$key];
+    }
+
 }
