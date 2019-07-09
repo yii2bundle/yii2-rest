@@ -1,3 +1,7 @@
 responses:
   201:
     description: "Ресурс был успешно создан в ответ на POST-запрос. Заголовок Location содержит URL, указывающий на только что созданный ресурс"
+    headers:
+      X-Entity-Id:
+        type: integer
+        description: ID созданной сущности
