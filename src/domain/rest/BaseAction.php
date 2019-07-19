@@ -49,12 +49,15 @@ class BaseAction extends Action {
 		
 		Yii::$app->response->setStatusCode($this->successStatusCode);
 		if($this->successStatusCode != 200) {
+		    $this->beforeResponseClear($response);
 			$response = null;
 		}
 		return $response;
 	}
-	
-	private function getService() {
+
+	protected function beforeResponseClear($response){}
+
+    private function getService() {
 		if(!empty($this->service)) {
 			return $this->service;
 		}
