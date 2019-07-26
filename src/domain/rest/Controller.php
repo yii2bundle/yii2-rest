@@ -3,6 +3,7 @@
 namespace yii2lab\rest\domain\rest;
 
 use yii\rest\Controller as YiiController;
+use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\services\base\BaseService;
 use yii2rails\extension\web\helpers\ControllerHelper;
 
@@ -53,10 +54,11 @@ class Controller extends YiiController {
 	
 	private function initFormat() {
 		$format = $this->format();
-		$this->serializer = [
-			'class' => Serializer::class,
-			'format' => $format,
-		];
+		$default = [
+            'class' => Serializer::class,
+            'format' => $format,
+        ];
+        $this->serializer = EnvService::get('response.serializer', $default);
 	}
 
 }
