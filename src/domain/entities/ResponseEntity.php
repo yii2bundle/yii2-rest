@@ -42,9 +42,15 @@ class ResponseEntity extends BaseEntity {
         ];
     }
 
-    public function getHeader($key) {
+    public function getHeader($key, $asArray = false) {
         $key = mb_strtolower($key);
-        return $this->headers[$key];
+
+        $value = $this->headers[$key];
+        if($asArray) {
+            $arr = explode(';', $value);
+            $value = array_map('trim', $arr);
+        }
+        return $value;
     }
 
 }
