@@ -15,7 +15,7 @@
  *
  * @SuppressWarnings(PHPMD)
 */
-class RestTester extends \yii2lab\test\base\_support\RestTester
+class RestTester extends \yii2tool\test\base\_support\RestTester
 {
     use _generated\RestTesterActions;
 

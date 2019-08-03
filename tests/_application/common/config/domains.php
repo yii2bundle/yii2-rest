@@ -2,7 +2,7 @@
 
 use yii\helpers\ArrayHelper;
 use yii2rails\domain\enums\Driver;
-use yii2lab\test\helpers\TestHelper;
+use yii2tool\test\helpers\TestHelper;
 
 $config = [
 ];
