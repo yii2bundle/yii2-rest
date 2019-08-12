@@ -8,7 +8,7 @@ use yii2rails\domain\BaseEntity;
  * Class ResponseEntity
  * @package yii2lab\rest\domain\entities
  *
- * @property array $content
+ * @property $content
  * @property array $data
  * @property array $headers
  * @property array $cookies
