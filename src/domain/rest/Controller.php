@@ -35,7 +35,7 @@ class Controller extends YiiController {
 		parent::init();
 		$this->initService();
 		$this->initFormat();
-		$this->initBehaviors();
+		//$this->initBehaviors();
 	}
 	
 	private function initBehaviors() {
