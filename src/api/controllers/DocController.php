@@ -40,7 +40,7 @@ class DocController extends Controller
 			throw new NotFoundHttpException('Empty document');
 		}
 		Yii::$app->response->format = Response::FORMAT_HTML;
-		$content = str_replace(ApiDocEnum::EXAMPLE_DOMAIN . SL, $_ENV['API_DOMAIN_URL'] . SL, $content);
+		$content = str_replace(ApiDocEnum::EXAMPLE_DOMAIN . SL, $_ENV['API_URL'] . SL, $content);
 		return $content;
 	}
  
